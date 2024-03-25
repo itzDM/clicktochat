@@ -36,13 +36,18 @@ header {
 
 nav {
   margin-left: 10px;
+  margin-right: 10px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 8px;
   padding: 6px;
 }
 nav h1 {
   font-style: italic;
+}
+.themeBtnImg {
+  cursor: pointer;
 }
 
 form {

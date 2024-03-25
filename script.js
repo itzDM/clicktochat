@@ -5,6 +5,16 @@ const createLinkMob = document.createElement("a");
 const createLinkWeb = document.createElement("a");
 const input = document.querySelector(".input");
 const error = document.querySelector(".error");
+const mode = localStorage.getItem("mode") || "";
+const body = document.querySelector(" body");
+const themeBtnImg = document.querySelector(".themeBtnImg");
+
+document.body.className = mode;
+
+themeBtnImg.addEventListener("click", () => {
+  localStorage.setItem("mode", mode == "light" ? "" : "light");
+  body.classList.toggle("light");
+});
 
 const validateMobileNumber = (number) => {
   const phoneNumberRegex = /^(\+\d{1,3})?\d{10,15}$/;
