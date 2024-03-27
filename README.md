@@ -10,8 +10,14 @@ Click to chat is WhatsApp's feature allows you to begin a chat with someone with
 
 ## Features:
 
-1. **Error Handling**: An intuitive error handling mechanism ensures that users are notified of any errors that may occur during the process of creating a link.
+1. **Country Code**: You can choose the country code for your number easily.
 
-2. **Create your own link**: Easily create your own link with just a few clicks.
+2. **Messaging**: You can can write any message you want to send to the person.
 
-3. **Chat to App/Web**: You Can Choose to Chat to App or WhatsApp Web .
+3. **Dark/Light**: You can choose between light and dark theme easily by clicking the toggle button on the top right corner.
+
+4. **Create your own link**: Easily create your own link with just a few clicks.
+
+5. **Chat to App/Web**: You Can Choose to Chat to App or WhatsApp Web .
+
+6. **Error Handling**: An intuitive error handling mechanism ensures that users are notified of any errors that may occur during the process of creating a link.

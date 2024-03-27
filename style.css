@@ -57,13 +57,25 @@ form {
   flex-direction: column;
   gap: 20px;
   height: 30vh;
-  margin-top: 30px;
+  margin-top: 80px;
 }
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
 .form-control {
   display: flex;
   flex: 2;
   align-items: center;
   gap: 20px;
+}
+.textArea {
+  background: var(--bgSoft);
+  color: var(--textSoft);
+  padding: 8px;
+  border-radius: 12px;
 }
 
 .error-place {
@@ -82,6 +94,13 @@ form {
 .input:active,
 .input:focus {
   outline: none !important;
+}
+
+.iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
+  background: transparent !important;
+}
+.iti__country-list {
+  background-color: var(--bgSoft) !important;
 }
 
 form button {

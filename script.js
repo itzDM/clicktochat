@@ -8,14 +8,24 @@ const error = document.querySelector(".error");
 const mode = localStorage.getItem("mode") || "";
 const body = document.querySelector(" body");
 const themeBtnImg = document.querySelector(".themeBtnImg");
+const inputMessage = document.querySelector(".textArea");
 
 document.body.className = mode;
 
+//  theme mode
 themeBtnImg.addEventListener("click", () => {
   localStorage.setItem("mode", mode == "light" ? "" : "light");
   body.classList.toggle("light");
 });
 
+// adding country code selector
+const phoneInput = window.intlTelInput(input, {
+  preferredCountries: ["in", "us"],
+  utilsScript:
+    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+});
+
+//  validating mobile number
 const validateMobileNumber = (number) => {
   const phoneNumberRegex = /^(\+\d{1,3})?\d{10,15}$/;
   if (!Number(number)) {
@@ -32,7 +42,7 @@ inputForm.addEventListener("submit", (e) => {
   createLinkMob.remove();
   createLinkWeb.remove();
   chatInfo.textContent = "";
-  if (input.value === "") {
+  if (phoneInput.getNumber() === "") {
     error.textContent = "Please enter a Mobile Number";
     const interval = setInterval(() => {
       error.textContent = "";
@@ -40,7 +50,7 @@ inputForm.addEventListener("submit", (e) => {
     }, 2000);
     return;
   } else {
-    const isNumber = input.value.replace(/\s/g, "");
+    const isNumber = phoneInput.getNumber().replace(/\s/g, "");
     const result = validateMobileNumber(isNumber);
     if (result.error) {
       error.textContent = result.error;
@@ -50,13 +60,10 @@ inputForm.addEventListener("submit", (e) => {
       }, 2000);
       return;
     }
-    let number = result.phoneNumber;
-    if (number.length === 10) {
-      number = "+91" + number;
-    }
-    chatInfo.textContent = `Chat on WhatsApp with ${number}`;
-    const urlWeb = `https://web.whatsapp.com/send/?phone=${number}&text&type=phone_number&app_absent=0`;
-    const urlMob = `https://api.whatsapp.com/send/?phone=${number}&text&type=phone_number&app_absent=0"`;
+    console.log(inputMessage.value);
+    chatInfo.textContent = `Chat on WhatsApp with ${phoneInput.getNumber()}`;
+    const urlWeb = `https://web.whatsapp.com/send/?phone=${phoneInput.getNumber()}&text=inputMessage.value&type=phone_number&app_absent=0`;
+    const urlMob = `https://api.whatsapp.com/send/?phone=${phoneInput.getNumber()}&text=inputMessage.value&type=phone_number&app_absent=0"`;
     createLinkMob.href = urlMob;
     createLinkMob.target = "_blank";
     createLinkMob.textContent = "Continue to Chat app";

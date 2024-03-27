@@ -38,10 +38,15 @@
       name="twitter:image"
       content="https://raw.githubusercontent.com/itzDM/clicktochat/main/images/logo.svg"
     />
-    <link rel="icon" type="image/x-icon" href="./images/logo.svg" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.svg" />
     <title>Click to Chat</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer type="module"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
   </head>
   <body class="">
     <header>
@@ -53,14 +58,16 @@
     </header>
     <main>
       <form class="form">
-        <div class="form-control">
-          <input
-            class="input"
-            type="text"
-            autofocus
-            placeholder="Enter Mobile Number"
-          />
-          <button type="submit">Message</button>
+        <div class="form-item">
+          <div class="form-control">
+            <input class="input" type="tel" placeholder="Enter Mobile Number" />
+            <button type="submit">Message</button>
+          </div>
+          <textarea
+            class="textArea"
+            rows="3"
+            placeholder="If any message, Write here... (optional) "
+          ></textarea>
         </div>
         <div class="error-place">
           <p class="error"></p>
