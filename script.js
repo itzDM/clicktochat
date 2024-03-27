@@ -60,10 +60,13 @@ inputForm.addEventListener("submit", (e) => {
       }, 2000);
       return;
     }
-    console.log(inputMessage.value);
     chatInfo.textContent = `Chat on WhatsApp with ${phoneInput.getNumber()}`;
-    const urlWeb = `https://web.whatsapp.com/send/?phone=${phoneInput.getNumber()}&text=inputMessage.value&type=phone_number&app_absent=0`;
-    const urlMob = `https://api.whatsapp.com/send/?phone=${phoneInput.getNumber()}&text=inputMessage.value&type=phone_number&app_absent=0"`;
+    const urlWeb = `https://web.whatsapp.com/send/?phone=${phoneInput.getNumber()}&text=${
+      inputMessage.value
+    }&type=phone_number&app_absent=0`;
+    const urlMob = `https://api.whatsapp.com/send/?phone=${phoneInput.getNumber()}&text=${
+      inputMessage.value
+    }&type=phone_number&app_absent=0"`;
     createLinkMob.href = urlMob;
     createLinkMob.target = "_blank";
     createLinkMob.textContent = "Continue to Chat app";
