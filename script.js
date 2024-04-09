@@ -15,6 +15,7 @@ document.body.className = mode;
 //  theme mode
 themeBtnImg.addEventListener("click", () => {
   localStorage.setItem("mode", mode == "light" ? "" : "light");
+  body.style.transition = "all 1s ease-out 0s";
   body.classList.toggle("light");
 });
 
